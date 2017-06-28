@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A raty system</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ratySystem">
+        <header><h1>This is a rating system! welcome to rate</h1></header>
+        <main>
+            <ul>
+                <li>
+                    <h3>Management</h3>
+                    <div class="star"></div>
+                </li>
+                <li>
+                    <h3>Local Team Skill</h3>
+                    <div class="star"></div>
+                </li>
+                <li>
+                    <h3>Technical Handling</h3>
+                    <div class="star"></div>
+                </li>
+                <li>
+                    <h3>Operation</h3>
+                    <div class="star"></div>
+                </li>
+                <li>
+                    <h3>Documentation</h3>
+                    <div class="star"></div>
+                </li>
+            </ul>
+        </main>
+        <footer>
+            <h2>please leave word</h2>
+            <form action="">
+                <div><textarea name="leave_word" id="leave_word" cols="30" rows="10" placeholder="Please fill in your comments"></textarea></div>
+                <div><label>Your name:<input type="text"></label></div>
+                <div><label>Your email:<input type="email"></label></div>
+                <div><input type="submit" value="submit"></div>
+            </form>
+        </footer>
+    </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.raty.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(function(){
+            $('<span class="score"></span>').appendTo($('.star'))
+        })
+        // this is a rate system demo
+        $('.star').raty({
+            path: './images',
+            starHalf: 'star-half.png',
+            starOff: 'star-off.png',
+            starOn: 'star-on.png',
+            hints: ['1','2','3','4','5'],
+            cancel : true,
+            cancelOff: 'cancel-off.png',
+            cancelOn: 'cancel-on.png',
+            cancelPlace: 'right',
+            cancelHint: 'Cancel this rate',
+            noRatedMsg  : 'Not rated yet!',
+            number      : 6, //number of star
+            precision:true,//精度
+            round       : { down: .25, full: .6, up: .76 },
+            //score       : 2, // initial rating
+            //single      : true, //Enable just a single star selection,can interact score
+            space       : false, //Puts space between the icons
+            click: function(score,e){
+                console.log(score)
+                if(score>0&&score<0.5){
+                    $('.score').text("Poor")
+                }
+                if(score>=0.5&&score<=1){
+                    $('.score').text("Poor")
+                }
+                if(score>1&&score<1.5){
+                    $('.score').text("Bad")
+                }
+                if(score>=1.5&&score<=2){
+                    $('.score').text("Bad")
+                }
+                if(score>2&&score<2.5){
+                    $('.score').text("Fair")
+                }
+                if(score>2.5&&score<=3){
+                    $('.score').text("Fair")
+                }
+                if(score>3&&score<3.5){
+                    $('.score').text("Good")
+                }
+                if(score>=3.5 && score<=4){
+                    $('.score').text("Good")
+                }
+                if(score>4 && score<4.5){
+                    $('.score').text("Excellent")
+                }
+                if(score>=4.5&&score<=5){
+                    $('.score').text("Excellent")
+                }
+            }
+        })
+    </script>
+</body>
+</html>

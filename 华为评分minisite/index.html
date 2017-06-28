@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <meta name="viewport" content="width=1366, user-scalable=no">
+
+</head>
+<body>
+<div class="continer">
+    <div class="top">
+        <div class="top_center">
+            <a href="javascript:;" class="logo"><img  src="./images/logo.png" alt=""/></a>
+            <!--<a href="#" class="reto_home">返回官网</a>-->
+        </div>
+    </div>
+    <div class="banner">
+        <img src="./images/index_banner.jpg" alt=""/>
+    </div>
+    <div class="middle">
+        <div class="middle_center">
+            <div class="middle_mode">
+                <div class="middle_mode_L">
+                    <img src="./images/issue_icon1.png" alt=""/>
+                    <p>Roadmap and Commitment Management</p>
+                </div>
+                <div class="middle_mode_R">
+                    <div id="function-demo1" class="target-demo"></div>
+                    <i class="ping ping1"></i>
+                    <span class="score score1">0</span>
+                </div>
+            </div>
+            <div class="middle_mode">
+                <div class="middle_mode_L">
+                    <img src="./images/issue_icon2.png" alt=""/>
+                    <p>Local Team Skill & Stability</p>
+                </div>
+                <div class="middle_mode_R">
+                    <div id="function-demo2" class="target-demo"></div>
+                    <i class="ping ping2"></i>
+                    <span class="score score2">0</span>
+                </div>
+            </div>
+            <div class="middle_mode">
+                <div class="middle_mode_L">
+                    <img src="./images/issue_icon3.png" alt=""/>
+                    <p>Technical Issue Handling</p>
+
+                </div>
+                <div class="middle_mode_R">
+                    <div id="function-demo3" class="target-demo"></div>
+                    <i class="ping ping3"></i>
+                    <span class="score score3">0</span>
+                </div>
+            </div>
+            <div class="middle_mode">
+                <div class="middle_mode_L">
+                    <img src="./images/issue_icon4.png" alt=""/>
+                    <p>Operation & Maintenance</p>
+                </div>
+                <div class="middle_mode_R">
+                    <div id="function-demo4" class="target-demo"></div>
+                    <i class="ping ping4"></i>
+                    <span class="score score4">0</span>
+                </div>
+            </div>
+            <div class="middle_mode">
+                <div class="middle_mode_L">
+                    <img src="./images/issue_icon5.png" alt=""/>
+                    <p>Documentation</p>
+                </div>
+                <div class="middle_mode_R">
+                    <div id="function-demo5" class="target-demo"></div>
+                    <i class="ping ping5"></i>
+                    <span class="score score5">0</span>
+                </div>
+            </div>
+            <div class="shuru">
+                <textarea name="" id="liuyan" placeholder="Please fill in your comments"></textarea>
+                <div class="check_shuru">
+                    <input class="input_email input_email_on"  placeholder="Please fill in your Email " type="text"/>
+                </div>
+                <div  class="Submit">Submit</div>
+            </div>
+
+        </div>
+    </div>
+    <div class="hide_window">
+        <div class="hide_show">
+            <img src="./images/thankyou.png" alt=""/>
+            <img class="close_btn" src="./images/close_btn.png" alt=""/>
+            <div class="cen_hide_show">
+                <h3 class="hide_show_h3">Sorry. One email address can only submit one time. Please check the email address you input. Thank you!
+                </h3>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.raty.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script>
+    $(".close_btn").on("click",function(){
+       $(".hide_window").fadeOut();
+    });
+$(".Submit").on("click",function(){
+    $(".hide_window").fadeIn();
+    var a = new Array(5);
+    a[0] = $(".ping1").text();
+    a[1] = $(".ping2").text();
+    a[2] = $(".ping3").text();
+    a[3] = $(".ping4").text();
+    a[4] = $(".ping5").text();
+    for(var i=0;i< a.length;i++){
+        console.log(a[i])
+    }
+    var b = new Array(5);
+    b[0] = $(".score1").text();
+    b[1] = $(".score2").text();
+    b[2] = $(".score3").text();
+    b[3] = $(".score4").text();
+    b[4] = $(".score5").text();
+    for(var j=0;j< b.length;j++){
+        console.log(b[j])
+    }
+});
+</script>
+</body>
+</html>
