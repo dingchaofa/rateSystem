@@ -50,6 +50,7 @@
     <script>
         $(function(){
             $('<span class="score"></span>').appendTo($('.star'))
+            $('<input class="saveScore" type="text" hidden>')..appendTo($('.star'))
         })
         // this is a rate system demo
         $('.star').raty({
@@ -70,6 +71,7 @@
             //score       : 2, // initial rating
             //single      : true, //Enable just a single star selection,can interact score
             space       : false, //Puts space between the icons
+            target: ".saveScore",
             click: function(score,e){
                 console.log(score)
                 if(score>0&&score<0.5){
